@@ -1,8 +1,7 @@
-timeInDialect();
-displayWelcomeMsg();
+//Bernese-Dialect Clock Web Application in JS
+//By thedcpat in 2020
 
-setInterval(timeInDialect,1000);
-setInterval(displayWelcomeMsg,60000);
+setInterval(function calls(){timeInDialect(); displayWelcomeMsg();});
 
 function displayWelcomeMsg() {
     var today = new Date();
@@ -21,17 +20,6 @@ function displayWelcomeMsg() {
     else {
         element.innerHTML = "Guete Abee!";
     }
-}
-
-function displayTime() {
-    var today = new Date();
-    dateNow = today.getDate();
-    monthNow = today.getMonth();
-    hoursNow = today.getHours();
-    minutesNow = today.getMinutes();
-    secondsNow = today.getSeconds();
-
-    document.getElementById('clockP').innerHTML = dateNow +" - "+ hoursNow +":"+ minutesNow +":"+ secondsNow;
 }
 
 !function(d,s,id){
@@ -61,8 +49,8 @@ function checkHour(a){
 
 function timeInDialect() {
     var numberName = new Map();
-    var names = ['Punkt','eis','zwöi','drüü','vier','füef','sächs','sibe','acht','nüün','zäh','elf','zwölf','drizäh','vierzäh','viertu','sächzäh','sibzäh','achtzäh','nüünzäh','zwänzg','einezwänzg','zwöiezwänzg','drüezwänzg','vierezwänzg',
-    'füfezwänzg','sächsezwänzg','sibenezwänzg','achtezwänzg','nüünezwänzg','haubi']
+    var names = ['Punkt','eis','zwöi','drüü','vier','füf','sächs','sibe','acht','nüün','zäh','euf','zwöuf','drizäh','vierzäh','viertu','sächzäh','sibzäh','achtzäh','nüünzäh','zwänzg','einezwänzg','zwöiezwänzg','drüezwänzg','vierezwänzg',
+    'füfezwänzg','sächsezwänzg','sibenezwänzg','achtezwänzg','nüünezwänzg','haubi'];
 
     var time = new Date();
 
@@ -76,6 +64,13 @@ function timeInDialect() {
     if (minuteNumber<30 && minuteNumber!=0){
         minute = names[minuteNumber]
         before = ' ab ';
+    }
+    else if (minuteNumber>30 && minuteNumber<40){
+        minute = names[minuteNumber - 30];
+        hourNumber = hourNumber + 1;
+        hourNumber = checkHour(hourNumber);
+        hour = names[hourNumber];
+        before = ' ab haubi '
     }
     else if (minuteNumber>30){
         minute = names[60 - minuteNumber];
@@ -103,7 +98,6 @@ function timeInDialect() {
     else if (hourNumber == 10){
     	hour = "zähni";
     }
-
 
     document.getElementById('bernese').innerHTML = "Es isch "+minute+before+hour;
 
