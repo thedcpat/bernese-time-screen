@@ -58,17 +58,17 @@ function checkHour(a){
 function timeInDialect() {
 
     var today = new Date();
-
     var numberName = new Map();
-    var names = ['Punkt','eis','zwöi','drüü','vier','füf','sächs','sibe','acht','nüün','zäh','euf','zwöuf','drizäh','vierzäh','viertu','sächzäh','sibzäh','achtzäh','nüünzäh','zwänzg','einezwänzg','zwöiezwänzg','drüezwänzg','vierezwänzg',
-    'füfezwänzg','sächsezwänzg','sibenezwänzg','achtezwänzg','nüünezwänzg','haubi'];
 
     var hourNumber = today.getHours();
     var minuteNumber = today.getMinutes();
 
     hourNumber = checkHour(hourNumber);
+    
+    var names = ['Punkt','eis','zwöi','drüü','vier','füf','sächs','sibe','acht','nüün','zäh','euf','zwöuf','drizäh','vierzäh','viertu','sächzäh','sibzäh','achtzäh','nüünzäh','zwänzg','einezwänzg','zwöiezwänzg','drüezwänzg','vierezwänzg',
+    'füfezwänzg','sächsezwänzg','sibenezwänzg','achtezwänzg','nüünezwänzg','haubi'];
 
-    hour = names[hourNumber]
+    var hour = names[hourNumber]
 
     if (minuteNumber<30 && minuteNumber!=0){
         minute = names[minuteNumber]
