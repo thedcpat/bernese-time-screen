@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+body {
+    size: 100%;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.MainTitle {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 6vw;
+    text-align: center;
+}
+
+#bernese{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 5vw;
+    text-align: center;
+}
+
+.weatherwidget-io {
+    margin: 0 auto;
+    width: 80%;
+    height: 10%;
+}
