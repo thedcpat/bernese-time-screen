@@ -1,10 +1,15 @@
 //Bernese-Dialect Clock Web Application in JS
 //By thedcpat in 2020
 
+//Global call of the two main functions
 setInterval(function calls(){timeInDialect(); displayWelcomeMsg();});
 
+
+//Define and write Welcome-Message based on the time to be shown on top of the page
 function displayWelcomeMsg() {
+
     var today = new Date();
+
     var timeNow = today.getHours();
     var element = document.getElementById('titleTop');
 
@@ -22,6 +27,7 @@ function displayWelcomeMsg() {
     }
 }
 
+//JS for the weather widget: Gets instantly called
 !function(d,s,id){
     var js,fjs=d.getElementsByTagName(s)[0];
     if(!d.getElementById(id)){
@@ -32,6 +38,7 @@ function displayWelcomeMsg() {
 }
 (document,'script','weatherwidget-io-js');
 
+//transform hour to 12 hour format
 function checkHour(a){
     if (a >= 13 && a<23){
         a = a - 12;
@@ -47,15 +54,17 @@ function checkHour(a){
     return a;
 }
 
+//Define and write the time-numbers in dialect-words eefe
 function timeInDialect() {
+
+    var today = new Date();
+
     var numberName = new Map();
     var names = ['Punkt','eis','zwöi','drüü','vier','füf','sächs','sibe','acht','nüün','zäh','euf','zwöuf','drizäh','vierzäh','viertu','sächzäh','sibzäh','achtzäh','nüünzäh','zwänzg','einezwänzg','zwöiezwänzg','drüezwänzg','vierezwänzg',
     'füfezwänzg','sächsezwänzg','sibenezwänzg','achtezwänzg','nüünezwänzg','haubi'];
 
-    var time = new Date();
-
-    var hourNumber = time.getHours();
-    var minuteNumber = time.getMinutes();
+    var hourNumber = today.getHours();
+    var minuteNumber = today.getMinutes();
 
     hourNumber = checkHour(hourNumber);
 
