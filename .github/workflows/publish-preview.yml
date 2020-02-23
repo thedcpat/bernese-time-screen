@@ -3,7 +3,7 @@ name: Update gh-pages preview
 on:
   push:
     branches:
-    - pages-test
+    - page-preview
 
 jobs:
   publish:
@@ -28,4 +28,4 @@ jobs:
           BRANCH: gh-pages
           FOLDER: content
           TARGET_FOLDER: preview
-          BASE_BRANCH: pages-test
+          BASE_BRANCH: page-preview
