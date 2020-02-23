@@ -27,5 +27,5 @@ jobs:
           SSH: true
           BRANCH: gh-pages
           FOLDER: content
-          TARGET_FOLDER: preview/b-t-s
+          TARGET_FOLDER: preview
           BASE_BRANCH: pages-test
