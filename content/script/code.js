@@ -4,7 +4,6 @@
 //Global call of the two main functions
 setInterval(function calls(){timeInDialect(); displayWelcomeMsg();});
 
-
 //Define and write Welcome-Message based on the time to be shown on top of the page
 function displayWelcomeMsg() {
 
@@ -110,4 +109,22 @@ function timeInDialect() {
 
     document.getElementById('bernese').innerHTML = "Es isch "+minute+before+hour;
 
+}
+
+/* Update the theme, call with arguments 'themename' or 'standard' to reset theme. */
+// Note: theme is reset at page-reload because it is not yet saved in local/session storage or a cookie.
+
+function changeTheme(theme) {
+    var themeList = ['theme1', 'theme2', 'theme3'];
+    for (style in themeList) {
+        document.querySelector('html').classList.remove(themeList[style]);
+    }
+    if (theme != 'standard') {
+        document.querySelector('html').classList.add(theme);
+    }
+
+    // This part updates the weatherwidget attributes and reinitializes the widget.
+    document.querySelector('a').setAttribute('data-basecolor', getComputedStyle(document.documentElement).getPropertyValue('--color1'));
+    document.querySelector('a').setAttribute('data-textcolor', getComputedStyle(document.documentElement).getPropertyValue('--color0'));
+    __weatherwidget_init()
 }
