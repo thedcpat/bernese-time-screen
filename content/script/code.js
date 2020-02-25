@@ -124,7 +124,7 @@ function changeTheme(theme) {
     }
 
     // This part updates the weatherwidget attributes and reinitializes the widget.
-    document.querySelector('a').setAttribute('data-basecolor', getComputedStyle(document.documentElement).getPropertyValue('--color1'));
-    document.querySelector('a').setAttribute('data-textcolor', getComputedStyle(document.documentElement).getPropertyValue('--color0'));
+    document.getElementById('widget').setAttribute('data-basecolor', getComputedStyle(document.documentElement).getPropertyValue('--color1'));
+    document.getElementById('widget').setAttribute('data-textcolor', getComputedStyle(document.documentElement).getPropertyValue('--color0'));
     __weatherwidget_init()
 }
